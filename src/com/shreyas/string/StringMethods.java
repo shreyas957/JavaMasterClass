@@ -1,5 +1,6 @@
 package com.shreyas.string;
 
+// There are many methods which we can see through API
 public class StringMethods {
     public static void main(String[] args) {
         String name = "shreyas shevale";
