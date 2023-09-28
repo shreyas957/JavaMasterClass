@@ -25,9 +25,6 @@ public class Wildcards {
         lowerBoundedWildCard(list2);
         lowerBoundedWildCard(list4);
 
-
-
-
     }
     public static void unboundedWildCard(List<?> ls) {
         // If I use Object instead of "?", we fail to print the List for Integer, Double, etc.
