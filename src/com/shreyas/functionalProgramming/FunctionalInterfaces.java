@@ -6,6 +6,18 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 
+
+//Firstly, what you need to remember is that there are 4 categories of interfaces:
+//        1. the suppliers: do not take any argument, return something
+//        2. the consumers: take an argument, do not return anything
+//        3. the predicates: take an argument, return a boolean
+//        4. the functions: take an argument, return something
+//
+//        Secondly: some interfaces have versions that take two arguments instead of one:
+//        1. the biconsumers
+//        2. the bipredicates
+//        3. the bifunctions
+
 public class FunctionalInterfaces {
     public static void main(String[] args) {
         Function<Integer, Integer> incrementByOne = number -> number+1;
