@@ -1,4 +1,4 @@
-package com.shreyas.functionalProgramming.combinatorPatterns;
+package com.shreyas.combinatorPatterns;
 
 public enum ValidationResult {
     SUCCESS,

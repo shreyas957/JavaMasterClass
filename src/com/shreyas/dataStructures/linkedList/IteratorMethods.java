@@ -1,6 +1,7 @@
 package com.shreyas.dataStructures.linkedList;
 
 import java.util.LinkedList;
+import java.util.ListIterator;
 
 public class IteratorMethods {
     public static void main(String[] args) {
@@ -8,7 +9,6 @@ public class IteratorMethods {
         names.add("Shreyas");
         names.add("Kartik");
         names.add("Vikas");
-        names.add("Sumit");
         names.add("Sumit");
 
         var iterator = names.iterator();
@@ -18,8 +18,12 @@ public class IteratorMethods {
 //                iterator.remove();
 //            }
         }
+        System.out.println();
 
-
+        ListIterator<String> it = names.listIterator(names.size());
+        while (it.hasPrevious()) {
+            System.out.println(it.previous());
+        }
 
     }
 }

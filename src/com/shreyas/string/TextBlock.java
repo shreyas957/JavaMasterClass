@@ -5,7 +5,7 @@ public class TextBlock {
     public static void main(String[] args) {
 
         String textBlock = """
-                Inheritence :
+                Inheritance :
                     Parent:
                         child""";
 

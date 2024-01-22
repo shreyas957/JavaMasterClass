@@ -28,6 +28,7 @@ public class StaticBlockInitialization {
 
 class StaticBlock {
     public static int count;
+
     // Static block initialization
     static {
         // executed once as soon as class is invoked.
@@ -52,7 +53,7 @@ class InstanceBlock {
         count++;
     }
 
-    public InstanceBlock(){
+    public InstanceBlock() {
         System.out.println("Inside default constructor");
     }
 }
