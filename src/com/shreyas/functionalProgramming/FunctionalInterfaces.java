@@ -55,4 +55,9 @@ public class FunctionalInterfaces {
 
         // AND MANY MORE
     }
+
+    @FunctionalInterface
+    interface xyz {
+        void doSomething(String s);
+    }
 }
