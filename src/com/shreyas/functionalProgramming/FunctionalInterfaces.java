@@ -54,10 +54,13 @@ public class FunctionalInterfaces {
 
 
         // AND MANY MORE
+        Xyz<String> xyz = s -> System.out.println(s);
+        xyz.doSomething("Shreyas");
+
     }
 
     @FunctionalInterface
-    interface xyz {
-        void doSomething(String s);
+    interface Xyz<T> {
+        void doSomething(T t);
     }
 }
