@@ -1,4 +1,4 @@
-package com.shreyas.dataStructures.workingWithMap;
+package com.shreyas.collectionsInJava.workingWithMap;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -31,6 +31,7 @@ class Person {
         return Objects.hash(name);
     }
 }
+
 class Diamond {
     String place;
 
@@ -57,6 +58,18 @@ public class MapClass {
         System.out.println(personDiamondMap.get(new Person("Shreyas")));
 
         System.out.println();
+
+        for (Map.Entry<Person, Diamond> entry : personDiamondMap.entrySet()) {
+            System.out.println(entry.getKey() + " " + entry.getValue());
+        }
+
+        for (Person p : personDiamondMap.keySet()) {
+            System.out.println(p.name);
+        }
+
+        for (Diamond d : personDiamondMap.values()) {
+            System.out.println(d.place);
+        }
 
     }
 

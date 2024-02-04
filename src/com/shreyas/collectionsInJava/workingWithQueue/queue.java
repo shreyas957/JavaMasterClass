@@ -1,4 +1,4 @@
-package com.shreyas.dataStructures.workingWithQueue;
+package com.shreyas.collectionsInJava.workingWithQueue;
 
 import java.util.LinkedList;
 import java.util.Queue;

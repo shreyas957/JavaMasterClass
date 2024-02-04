@@ -1,11 +1,9 @@
 package com.shreyas.functionalProgramming;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 import java.util.function.BinaryOperator;
 import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.function.Supplier;
 
 class PlainOld {
@@ -41,7 +39,7 @@ public class MethodReferences {
         System.out.println("-".repeat(20));
 
 
-        // Convenience methods on lambda expression
+        // Convenience methods on lambda expression (chaining)
         Function<String, String> uCase = String::toUpperCase;
         Function<String, String> concatLastName = s -> s.concat("Shevale ");
         Function<String, String> uCaseLastName = uCase.andThen(concatLastName);     // run uCase and then concatLastName
@@ -58,6 +56,12 @@ public class MethodReferences {
                 .andThen(s -> s.split(" "));
         System.out.println(Arrays.toString(f2.apply("Shreyas ")));
         System.out.println("-".repeat(20));
+
+
+        Predicate<String> nonNull = Objects::nonNull;
+        Predicate<String> nonEmpty = String::isEmpty;
+        Predicate<String> shorterThan5 = s -> s.length() < 5;
+        Predicate<String> p = nonNull.and(nonEmpty).and(shorterThan5);
 
         record Person(String firstName, String lastName) {
         }

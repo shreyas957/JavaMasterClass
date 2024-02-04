@@ -1,4 +1,4 @@
-package com.shreyas.dataStructures.linkedList;
+package com.shreyas.collectionsInJava.linkedList;
 
 import java.util.LinkedList;
 import java.util.ListIterator;

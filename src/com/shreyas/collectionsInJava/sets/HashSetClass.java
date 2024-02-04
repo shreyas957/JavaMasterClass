@@ -1,4 +1,4 @@
-package com.shreyas.dataStructures.sets;
+package com.shreyas.collectionsInJava.sets;
 
 import java.util.HashSet;
 import java.util.Iterator;

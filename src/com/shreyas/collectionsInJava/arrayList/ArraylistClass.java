@@ -1,4 +1,4 @@
-package com.shreyas.dataStructures.arrayList;
+package com.shreyas.collectionsInJava.arrayList;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -1,4 +1,4 @@
-package com.shreyas.dataStructures.workingWithStack;
+package com.shreyas.collectionsInJava.workingWithStack;
 
 import java.util.Stack;
 

@@ -15,6 +15,8 @@ public class Main {
         day1 = getRandomDay();
         System.out.println(day1);
 
+        WeekDays weekDays = WeekDays.SUN;
+
     }
 
     public static Days getRandomDay(){
@@ -22,6 +24,7 @@ public class Main {
         var day = Days.values();
         return day[randomNum];
     }
+
 }
 
 
