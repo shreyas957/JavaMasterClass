@@ -1,6 +1,10 @@
-package com.shreyas.workingWithFiles;
+package com.shreyas.IOandWorkingWithFiles.iopackage;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class Main {
@@ -18,7 +22,7 @@ public class Main {
         try {
             File file = new File(path);
             if (!file.exists()) {
-                file.createNewFile();       // To delete the file we have ".delete()" method.
+                boolean newFile = file.createNewFile();// To delete the file we have ".delete()" method.
             }
             return file;
         } catch (IOException e) {
@@ -35,7 +39,7 @@ public class Main {
         try (
                 FileWriter fileWriter = new FileWriter(file, append);
                 PrintWriter writer = new PrintWriter(fileWriter);
-             ) {
+        ) {
             writer.println("Writing to te file");
         } catch (IOException e) {
             System.out.println(e.getMessage());

@@ -1,5 +1,6 @@
 package com.shreyas.collectionsInJava.workingWithQueue;
 
+import java.util.ArrayDeque;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -18,5 +19,7 @@ public class queue {
         System.out.println(market.size());
         System.out.println(market.poll()); //Remove
         System.out.println(market.size());
+
+        Queue<Integer> queue = new ArrayDeque<>();  // Can be used as Stack as well as queue (faster than linkedList and stack itself)
     }
 }
