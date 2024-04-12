@@ -1,0 +1,12 @@
+If we look at the code of the FileReader class, then we’ll notice that the class contains minimal code for creating a FileReader object and no other methods.
+This raises questions like “Who does the heavy lifting behind this class?”
+To answer this question, we must understand the concept and hierarchy of the Reader class in Java.
+Reader is an abstract base class that makes reading characters possible through one of its concrete implementations.
+It defines the following basic operations of reading characters from any medium such as memory or the filesystem:
+Read a single character
+Read an array of characters
+Mark and reset a given position in a stream of characters
+Skip position while reading a character stream
+Close the input stream
+Naturally, all the implementations of Reader class must implement all the abstract methods, namely read() and close().
+Moreover, most implementations also override other inherited methods to give additional functionality or better performance.

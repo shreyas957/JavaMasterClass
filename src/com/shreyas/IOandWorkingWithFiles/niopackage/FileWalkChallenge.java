@@ -12,7 +12,45 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * Main class to start the file tree walk.
+ * Example:
+ * <p>
+ * Consider a simple file structure as an example:
+ *
+ * <pre>
+ * root_folder
+ * │   file1.txt (size: 10 bytes)
+ * │   file2.txt (size: 20 bytes)
+ * │
+ * └───subfolder1
+ * │   file3.txt (size: 30 bytes)
+ * │   file4.txt (size: 40 bytes)
+ * │
+ * └───subfolder2
+ * │   file5.txt (size: 50 bytes)
+ * │   file6.txt (size: 60 bytes)
+ * </pre>
+ * <p>
+ * When the {@code walkFileTree} method starts, it begins at the {@code root_folder}. It first visits {@code file1.txt} and {@code file2.txt},
+ * and the {@code visitFile} method adds their sizes to the total size of {@code root_folder} in the {@code folderSize} map.
+ * So, the size of {@code root_folder} is now 30 bytes.
+ * <p>
+ * Next, it visits {@code subfolder1}. The {@code preVisitDirectory} method adds an entry for {@code subfolder1} in the {@code folderSize} map
+ * with a size of 0. Then it visits {@code file3.txt} and {@code file4.txt}, and the {@code visitFile} method adds their sizes to the total
+ * size of {@code subfolder1} in the {@code folderSize} map. So, the size of {@code subfolder1} is now 70 bytes.
+ * <p>
+ * Next, it visits {@code subfolder2}. The {@code preVisitDirectory} method adds an entry for {@code subfolder2} in the {@code folderSize} map
+ * with a size of 0. Then it visits {@code file5.txt} and {@code file6.txt}, and the {@code visitFile} method adds their sizes to the total
+ * size of {@code subfolder2} in the {@code folderSize} map. So, the size of {@code subfolder2} is now 110 bytes.
+ * <p>
+ * When it finishes visiting {@code subfolder2}, the {@code postVisitDirectory} method adds the size of {@code subfolder2} to the size of
+ * its parent directory ({@code subfolder1}) in the {@code folderSize} map. So, the size of {@code subfolder1} is now 180 bytes.
+ * <p>
+ * When it finishes visiting {@code subfolder1}, the {@code postVisitDirectory} method adds the size of {@code subfolder1} to the size of
+ * its parent directory ({@code root_folder}) in the {@code folderSize} map. So, the size of {@code root_folder} is now 210 bytes.
+ * <p>
+ * This way, when the {@code walkFileTree} method finishes, the {@code folderSize} map contains the total size of each directory,
+ * including the sizes of all the files and subdirectories within each directory. This is why the {@code postVisitDirectory}
+ * method's else block updates the parent directory's statistics with the child directory's statistics.
  */
 public class FileWalkChallenge {
     public static void main(String[] args) {
@@ -175,46 +213,3 @@ public class FileWalkChallenge {
         }
     }
 }
-
-
-/**
- * Example:
- * <p>
- * Consider a simple file structure as an example:
- * <p>
- * root_folder
- * │   file1.txt (size: 10 bytes)
- * │   file2.txt (size: 20 bytes)
- * │
- * └───subfolder1
- * │   file3.txt (size: 30 bytes)
- * │   file4.txt (size: 40 bytes)
- * │
- * └───subfolder2
- * │   file5.txt (size: 50 bytes)
- * │   file6.txt (size: 60 bytes)
- * <p>
- * When the `walkFileTree` method starts, it begins at the `root_folder`. It first visits `file1.txt` and `file2.txt`,
- * and the `visitFile` method adds their sizes to the total size of `root_folder` in the `folderSize` map.
- * So, the size of `root_folder` is now 30 bytes.
- * <p>
- * Next, it visits `subfolder1`. The `preVisitDirectory` method adds an entry for `subfolder1` in the `folderSize` map
- * with a size of 0. Then it visits `file3.txt` and `file4.txt`, and the `visitFile` method adds their sizes to the total
- * size of `subfolder1` in the `folderSize` map. So, the size of `subfolder1` is now 70 bytes.
- * <p>
- * Next, it visits `subfolder2`. The `preVisitDirectory` method adds an entry for `subfolder2` in the `folderSize` map
- * with a size of 0. Then it visits `file5.txt` and `file6.txt`, and the `visitFile` method adds their sizes to the total
- * size of `subfolder2` in the `folderSize` map. So, the size of `subfolder2` is now 110 bytes.
- * <p>
- * When it finishes visiting `subfolder2`, the `postVisitDirectory` method adds the size of `subfolder2` to the size of
- * its parent directory (`subfolder1`) in the `folderSize` map. So, the size of `subfolder1` is now 180 bytes.
- * <p>
- * When it finishes visiting `subfolder1`, the `postVisitDirectory` method adds the size of `subfolder1` to the size of
- * its parent directory (`root_folder`) in the `folderSize` map. So, the size of `root_folder` is now 210 bytes.
- * <p>
- * This way, when the `walkFileTree` method finishes, the `folderSize` map contains the total size of each directory,
- * including the sizes of all the files and subdirectories within each directory. This is why the `postVisitDirectory`
- * method's else block updates the parent directory's statistics with the child directory's statistics.
- */
-
-

@@ -2,7 +2,7 @@ package com.shreyas.IOandWorkingWithFiles.iopackage;
 
 import java.io.File;
 
-public class JavaIO {
+public class JavaIOBasics {
     public static void main(String[] args) {
         File file = new File("src/com/shreyas/IOandWorkingWithFiles/iopackage/example.txt");
 
