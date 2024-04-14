@@ -1,4 +1,4 @@
-package com.shreyas.IOandWorkingWithFiles.niopackage;
+package com.shreyas.IOandWorkingWithFiles.readingfiles;
 
 import java.io.IOException;
 import java.nio.charset.Charset;

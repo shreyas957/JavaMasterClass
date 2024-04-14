@@ -1,4 +1,4 @@
-package com.shreyas.IOandWorkingWithFiles.iopackage;
+package com.shreyas.IOandWorkingWithFiles.readingfiles;
 
 import java.io.File;
 import java.io.IOException;
@@ -13,7 +13,7 @@ import java.util.regex.MatchResult;
 public class ScannerForReadingFiles {
     public static void main(String[] args) {
         // Reading a file line by line using Scanner
-        try (Scanner scanner = new Scanner(new File("src/com/shreyas/IOandWorkingWithFiles/iopackage/ReadThisFile.txt"))) {
+        try (Scanner scanner = new Scanner(new File("src/com/shreyas/IOandWorkingWithFiles/readingfiles/ReadThisFile.txt"))) {
             while (scanner.hasNext()) {
                 System.out.println(scanner.nextLine());
             }
@@ -25,7 +25,7 @@ public class ScannerForReadingFiles {
         System.out.println("-".repeat(30));
 
         // Reading the entire file content at once using Scanner
-        try (Scanner scanner = new Scanner(new File("src/com/shreyas/IOandWorkingWithFiles/iopackage/ReadThisFile.txt"))) {
+        try (Scanner scanner = new Scanner(new File("src/com/shreyas/IOandWorkingWithFiles/readingfiles/ReadThisFile.txt"))) {
             scanner.useDelimiter("$"); // $ is the end of the file
             scanner.tokens().forEach(System.out::println);
         } catch (Exception e) {
@@ -34,7 +34,7 @@ public class ScannerForReadingFiles {
         System.out.println("-".repeat(30));
 
         // Using Scanner to find all words with 10 or more characters in a file
-        try (Scanner scanner = new Scanner(new File("src/com/shreyas/IOandWorkingWithFiles/iopackage/ReadThisFile.txt"))) {
+        try (Scanner scanner = new Scanner(new File("src/com/shreyas/IOandWorkingWithFiles/readingfiles/ReadThisFile.txt"))) {
             scanner.findAll("[A-Za-z]{10,}")
                     .map(MatchResult::group)
                     .distinct()
@@ -62,7 +62,7 @@ public class ScannerForReadingFiles {
         System.out.println("-".repeat(30));
 
         // Reading a file line by line using Scanner with Path
-        try (Scanner scanner = new Scanner(Path.of("src/com/shreyas/IOandWorkingWithFiles/iopackage/ReadThisFile.txt"))) {
+        try (Scanner scanner = new Scanner(Path.of("src/com/shreyas/IOandWorkingWithFiles/readingfiles/ReadThisFile.txt"))) {
             while (scanner.hasNext()) {
                 System.out.println(scanner.nextLine());
             }
