@@ -12,10 +12,10 @@ public abstract class Animal {
     }
 
     public abstract void move(String speed);  //If I insert curly braces to the abstract method it will show an error.
+
     public abstract void makeNoise();
-    public String explicitClassName(){
+
+    public String explicitClassName() {
         return getClass().getSimpleName() + "(( " + type + " ))";
     }
-
-
 }

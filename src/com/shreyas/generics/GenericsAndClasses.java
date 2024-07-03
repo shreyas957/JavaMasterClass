@@ -40,5 +40,9 @@ public class GenericsAndClasses {
         phoneBox.setT(new Phone("9657796022"));
         System.out.println(phoneBox.getT());
 
+        Box<String> stringBox = new Box<>();
+        stringBox.setT("Hello World");
+        System.out.println(stringBox.getT());
+
     }
 }

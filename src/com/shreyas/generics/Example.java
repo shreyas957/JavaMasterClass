@@ -38,7 +38,5 @@ public class Example {
         Comparable<Integer> num1 = 10;
         System.out.println(num1.compareTo(10));
 
-
-
     }
 }

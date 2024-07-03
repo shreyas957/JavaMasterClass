@@ -15,6 +15,9 @@ public class Wildcards {
         unboundedWildCard(list1);
         unboundedWildCard(list2);
 
+        generic(list1);
+        generic(list2);
+
         System.out.println("-".repeat(10));
 
         upperBoundedWildCard(list2);
@@ -28,6 +31,11 @@ public class Wildcards {
     }
     public static void unboundedWildCard(List<?> ls) {
         // If I use Object instead of "?", we fail to print the List for Integer, Double, etc.
+        System.out.println(ls);
+    }
+
+    public static <T> void generic(List<T> ls) {
+        // Generic method
         System.out.println(ls);
     }
 

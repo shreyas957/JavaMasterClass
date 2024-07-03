@@ -35,7 +35,7 @@ public class UserInput {
 
         String csvLine = "John Doe,25,Los Angeles,Software Engineer";
         Scanner scanner2 = new Scanner(csvLine);
-        scanner.useDelimiter(",");
+        scanner2.useDelimiter(",");
 
         while (scanner2.hasNext()) {
             System.out.println(scanner2.next());

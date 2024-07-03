@@ -10,14 +10,14 @@ public class GenericsAndMethods {
 
     // With Generics : Method will take any parameter
     static <T> void print(T[] array) {
-        for(T e : array) {
+        for (T e : array) {
             System.out.println(e.getClass().getName() + "-" + e);
         }
     }
 
     // Without Generics --> Only defined type will be taken, here only String array
     static void print2(String[] array) {
-        for(String e : array) {
+        for (String e : array) {
             System.out.println(e.getClass().getName() + "-" + e);
         }
     }

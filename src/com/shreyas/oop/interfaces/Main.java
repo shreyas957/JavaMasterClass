@@ -17,7 +17,7 @@ public class Main {
             System.out.println(vehicle.getCurrentSpeed());
         }
 
-        System.out.println(person.toString());
+        System.out.println(person);
         System.out.println("Purchase rate: " + Vehicle.PURCHASE_RATE);
         System.out.println("Miles to Km: " + car.milesToKm());
     }
