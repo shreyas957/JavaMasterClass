@@ -4,7 +4,7 @@ out/
 !**/src/test/**/out/
 JavaMasterClass.iml
 .idea
-
+target/
 ### Eclipse ###
 .apt_generated
 .classpath
