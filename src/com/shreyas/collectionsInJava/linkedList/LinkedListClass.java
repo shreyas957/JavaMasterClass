@@ -22,9 +22,6 @@ public class LinkedListClass {
         System.out.println("-".repeat(20));
 
         iteration(places);
-
-
-
     }
     public static void addMorePlaces(LinkedList<String> temp){
         temp.addFirst("Home");

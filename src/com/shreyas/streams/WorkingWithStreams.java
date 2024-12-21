@@ -54,7 +54,7 @@ public class WorkingWithStreams {
 // 7. Streams are ordered, they maintain the order of the elements in the collection
 // 8. Streams are reusable, we can use the same stream multiple times
 // 9. Streams are short-circuiting, they can stop processing the elements if they find the result
-// 10. Streams are parallelizable, they can run in parallel eg
+// 10. Streams are parallelizable, they can run in parallel eg parallelStream() method
 // 11. Streams are declarative, we don't have to worry about how to do it, we just have to say what to do
 // 12. Streams are composable, we can chain multiple operations together
 // 13. Streams are functional, we can use lambda expressions to define the operations

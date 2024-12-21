@@ -35,13 +35,5 @@ public class Lists {
         arrayList.sort(Comparator.reverseOrder());
         System.out.println(arrayList);
         System.out.println("-".repeat(20));
-
-
-
-
-
-
-
-
     }
 }

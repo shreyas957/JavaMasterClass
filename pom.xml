@@ -12,6 +12,15 @@
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+    <developers>
+        <developer>
+            <name>Shreyas Shevale</name>
+            <roles>
+                <role>Software Engineer</role>
+            </roles>
+        </developer>
+
+    </developers>
 
     <dependencies>
 
@@ -36,7 +45,6 @@
             <artifactId>commons-math3</artifactId>
             <version>3.6.1</version>
         </dependency>
-
 
     </dependencies>
 

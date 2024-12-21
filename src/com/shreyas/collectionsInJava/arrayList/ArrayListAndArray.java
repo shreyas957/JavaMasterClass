@@ -18,12 +18,9 @@ public class ArrayListAndArray {
 
         // List to array :
         ArrayList<String> arrayList = new ArrayList<>(List.of("Shreyas", "Vikas", "Kartik"));
-        String[] arrayString = arrayList.toArray(arrayList.toArray(new String[arrayList.size()]));
+        String[] arrayString = arrayList.toArray(new String[0]);  // new String[any_number]
         System.out.println(Arrays.toString(arrayString));
 
-
-        ArrayList<String> abc = new ArrayList<>(Arrays.asList("Shreyas"));
-
-
+        ArrayList<String> abc = new ArrayList<>(Arrays.asList("Shreyas"));   // --> mutable list from array
     }
 }

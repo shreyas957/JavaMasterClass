@@ -21,10 +21,7 @@ public class LocalClass {
 
         // Creating an instance of the local class
         LocalClassExample localObj = new LocalClassExample();
-
         // Calling the local class method
         localObj.display();
     }
-
-
 }

@@ -27,4 +27,8 @@ public class BoundedTypeParameters {
     static <T extends Comparable<T> & A & B> void example() {
 
     }
+
+    class Xyz<T extends Number & A & B> {
+        T obj;
+    }
 }

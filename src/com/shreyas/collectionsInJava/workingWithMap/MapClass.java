@@ -1,6 +1,8 @@
 package com.shreyas.collectionsInJava.workingWithMap;
 
+import javax.swing.text.html.HTMLDocument;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Objects;
 
@@ -71,6 +73,20 @@ public class MapClass {
             System.out.println(d.place);
         }
 
+        // traversing using iterator
+        Iterator<Map.Entry<Person, Diamond>> iterator = personDiamondMap.entrySet().iterator();
+        while (iterator.hasNext()) {
+            Map.Entry<Person, Diamond> entry = iterator.next();
+            System.out.println(entry.getKey() + " " + entry.getValue());
+        }
+        Iterator<Person> iterator1 = personDiamondMap.keySet().iterator();
+        while (iterator1.hasNext()) {
+            System.out.println(iterator1.next().name);
+        }
+        Iterator<Diamond> iterator2 = personDiamondMap.values().iterator();
+        while (iterator2.hasNext()) {
+            System.out.println(iterator2.next().place);
+        }
     }
 
     private static void hashMapMethod() {

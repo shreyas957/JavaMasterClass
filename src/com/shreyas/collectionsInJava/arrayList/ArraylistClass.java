@@ -26,9 +26,7 @@ public class ArraylistClass {
 //        groceryList1.add("Milk Powder");  will give error because type is Items and we are giving string
         System.out.println(groceryList1);
 
-
         ArrayList<ArrayList<String>> multiDList = new ArrayList<>();
-
     }
 }
 

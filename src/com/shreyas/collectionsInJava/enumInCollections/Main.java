@@ -18,7 +18,5 @@ public class Main {
 
         Map<WeekDays, String> map = new EnumMap<>(WeekDays.class);
         map.put(WeekDays.SUNDAY, "Shreyas");
-
-
     }
 }

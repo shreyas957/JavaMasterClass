@@ -17,7 +17,7 @@ public class queue {
 
         System.out.println(market.peek());
         System.out.println(market.size());
-        System.out.println(market.poll()); //Remove
+        System.out.println(market.poll()); //Retrieve and Remove
         System.out.println(market.size());
 
         Queue<Integer> queue = new ArrayDeque<>();  // Can be used as Stack as well as queue (faster than linkedList and stack itself)
