@@ -9,14 +9,13 @@ public class ThreadColoursExercise {
         // stopWatch object is shared across all threads, making it shared resource
         // and hence, it is not thread-safe.
         Thread green = new Thread(stopWatch::countDown, ThreadColour.ANSI_GREEN.name());
-        Thread purple = new Thread(() -> stopWatch.countDown(7),
+        Thread purple = new Thread(() -> stopWatch.countDown(15),
                 ThreadColour.ANSI_PURPLE.name());
         Thread red = new Thread(stopWatch::countDown,
                 ThreadColour.ANSI_RED.name());
         green.start();
         purple.start();
         red.start();
-
     }
 }
 

@@ -1,5 +1,11 @@
 package com.shreyas.concurrency;
 
+/**
+ * This class has the ANSI colour codes for the console output.
+ * with the help of these codes, we can change the colour of the text in the console.
+ * they work by adding the colour code before the text and then resetting it back to the default colour.
+ * @author Shreyas Shevale
+ */
 public enum ThreadColour {
     ANSI_RESET("\u001B[0m"),
     ANSI_BLACK("\u001B[30m"),

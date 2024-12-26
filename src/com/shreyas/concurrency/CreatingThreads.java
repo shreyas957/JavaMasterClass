@@ -1,5 +1,6 @@
 package com.shreyas.concurrency;
 
+import java.time.temporal.ChronoUnit;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -14,9 +15,15 @@ public class CreatingThreads {
      * @param args Command line arguments
      */
     public static void main(String[] args) {
+        System.out.println("""
+                0 : Main Thread
+                1 : CustomThread1 by extending Thread class
+                2 : Thread with Runnable using lambda expression
+                3 : CustomThread2 by implementing Runnable interface
+                """);
         // Create and start a custom thread
-        CustomThread customThread = new CustomThread();
-        customThread.start();
+        CustomThread1 customThread1 = new CustomThread1();
+        customThread1.start();
 
         // Create a Runnable using a lambda expression
         Runnable runnable = () -> {
@@ -31,8 +38,11 @@ public class CreatingThreads {
         };
 
         // Create and start a thread with the Runnable
-        Thread thread = new Thread(runnable);
-        thread.start();
+        Thread thread1 = new Thread(runnable);
+        thread1.start();
+
+        Thread thread2 = new Thread(new CustomThread2());
+        thread2.start();
 
         // Print numbers in the main thread
         for (int i = 0; i <= 3; i++) {
@@ -50,7 +60,7 @@ public class CreatingThreads {
  * The CustomThread class extends the Thread class and overrides the run method.
  * It prints numbers and sleeps for a specified time in each iteration.
  */
-class CustomThread extends Thread {
+class CustomThread1 extends Thread {
     /**
      * The run method contains the code that is executed when the thread is started.
      * It prints numbers and sleeps for 1 second in each iteration.
@@ -61,6 +71,24 @@ class CustomThread extends Thread {
             System.out.println("1");
             try {
                 Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}
+
+/**
+ * We can create custom thread by implementing Runnable interface and overriding run method
+ */
+class CustomThread2 implements Runnable {
+
+    @Override
+    public void run() {
+        for (int i = 0; i < 5; i++) {
+            System.out.println("3");
+            try {
+                TimeUnit.of(ChronoUnit.NANOS).sleep(10_000_000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
