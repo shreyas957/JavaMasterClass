@@ -1,41 +1,11 @@
 Student Id,Country Code,Enrolled Year,Age,Gender,Experienced,Course Code,Engagement Month,Engagement Year,Engagement Type
-Student ID: 1
-Country Code: US
-Enrolled Year: 8
-Age: 2017
-Student ID: 1
-Country Code: US
-Enrolled Year: 8
-Age: 2017
-Student ID: 2
-Country Code: CN
-Enrolled Year: 9
-Age: 2016
-Student ID: 2
-Country Code: CN
-Enrolled Year: 9
-Age: 2016
-Student ID: 3
-Country Code: AU
-Enrolled Year: 10
-Age: 2019
-Student ID: 3
-Country Code: AU
-Enrolled Year: 10
-Age: 2019
-Student ID: 4
-Country Code: AU
-Enrolled Year: 11
-Age: 2019
-Student ID: 4
-Country Code: AU
-Enrolled Year: 11
-Age: 2019
-Student ID: 5
-Country Code: US
-Enrolled Year: 12
-Age: 2023
-Student ID: 5
-Country Code: US
-Enrolled Year: 12
-Age: 2023
+1,CN,2,2021,22,F,false,JMC,DECEMBER,2023,Lecture 8
+1,CN,2,2021,22,F,false,PYC,MARCH,2023,Lecture 11
+2,CN,3,2017,72,M,false,JMC,MARCH,2018,Lecture 8
+2,CN,3,2017,72,M,false,PYC,OCTOBER,2021,Lecture 9
+3,IN,4,2020,30,F,true,JMC,JUNE,2024,Lecture 2
+3,IN,4,2020,30,F,true,PYC,NOVEMBER,2021,Lecture 7
+4,US,6,2021,45,U,false,JMC,AUGUST,2021,Lecture 7
+4,US,6,2021,45,U,false,PYC,MAY,2021,Lecture 9
+5,US,1,2017,27,F,true,JMC,JULY,2021,Lecture 8
+5,US,1,2017,27,F,true,PYC,AUGUST,2024,Lecture 10

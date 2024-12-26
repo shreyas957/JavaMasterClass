@@ -51,8 +51,8 @@ public class ReadingWithNIO {
             System.out.println("-----".repeat(30));
 
             // Read all lines of the file as a stream and apply the pattern to each line
-            try (var StringStream = Files.lines(path)) {
-                var result = StringStream
+            try (var stringStream = Files.lines(path)) {
+                var result = stringStream
                         .skip(1)  // Skip the first line
                         .map(p::matcher)  // Apply the pattern to each line
                         .filter(Matcher::matches)  // Filter out lines that don't match the pattern

@@ -29,9 +29,13 @@ public class FileVisitorNIO {
 
     }
 
-    // This class extends SimpleFileVisitor and overrides the visitFile, preVisitDirectory and postVisitDirectory methods.
-    // It is  used to print the file and directory names.
-    // Methods are called in the following order: preVisitDirectory, visitFile, postVisitDirectory
+    /**
+     * This class extends SimpleFileVisitor and overrides the visitFile, preVisitDirectory and postVisitDirectory methods.<br>
+     * It is  used to print the file and directory names.<br>
+     * Methods are called in the following order: preVisitDirectory, visitFile, postVisitDirectory <br>
+     * {@code FileVisitResult} is used to control the flow of the walkFileTree method. <br>
+     * It is enum with the following values: {@code CONTINUE, TERMINATE, SKIP_SIBLINGS, SKIP_SUBTREE}
+     */
     private static class StatsVisitor1 extends SimpleFileVisitor<Path> {
 
         private int level;

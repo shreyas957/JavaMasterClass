@@ -46,7 +46,7 @@ public class JavaIOBasics {
         File file = new File(filename);
         boolean exists = file.exists();
         if (exists) {
-            file.delete();
+            boolean delete = file.delete();
             System.out.println("File deleted successfully!");
             exists = file.exists();
         }

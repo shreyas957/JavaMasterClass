@@ -8,7 +8,7 @@ public class Basics {
 //        while (regx.contains("%s")) {
 //            regx = regx.replaceFirst("%s", args[index++]);
 //        }
-        while (regx.matches(".*%s.*")) {
+        while (regx.matches("")) {
             regx = regx.replaceFirst("%s", args[index++]);
         }
         return regx;

@@ -180,6 +180,8 @@ public class JavaNIO {
 
         // Directory Stream provides iterator to iterate over the files and sub-folders.
         // It is similar to Files.list() method but it is more efficient.
+        // Files.newDirectoryStream: Lazy loading, memory-efficient for large directories, allows inline filtering, requires manual closure.
+        // Files.list: Loads all entries upfront, easier with Stream API, use for small directories.
         try (var directoryStream = Files.newDirectoryStream(path)) {
             directoryStream.forEach(System.out::println);
         } catch (IOException e) {

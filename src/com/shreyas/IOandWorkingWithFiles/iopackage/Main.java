@@ -9,13 +9,10 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        File file = createFile(
-                "src/com/java/workingWithFiles/example.txt");
+        File file = createFile("src/com/java/workingWithFiles/example.txt");
 
         writeToFile(file, false);
         readFromFile(file);
-
-
     }
 
     private static File createFile(String path) {
