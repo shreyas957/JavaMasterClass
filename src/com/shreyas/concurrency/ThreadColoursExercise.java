@@ -4,14 +4,16 @@ import java.util.concurrent.TimeUnit;
 
 public class ThreadColoursExercise {
     public static void main(String[] args) {
-        StopWatch stopWatch = new StopWatch(TimeUnit.SECONDS);
+        StopWatch stopWatchGreen = new StopWatch(TimeUnit.SECONDS);
+        StopWatch stopWatchPurple = new StopWatch(TimeUnit.SECONDS);
+        StopWatch stopWatchRed = new StopWatch(TimeUnit.SECONDS);
 
         // stopWatch object is shared across all threads, making it shared resource
         // and hence, it is not thread-safe.
-        Thread green = new Thread(stopWatch::countDown, ThreadColour.ANSI_GREEN.name());
-        Thread purple = new Thread(() -> stopWatch.countDown(15),
+        Thread green = new Thread(stopWatchGreen::countDown, ThreadColour.ANSI_GREEN.name());
+        Thread purple = new Thread(() -> stopWatchPurple.countDown(15),
                 ThreadColour.ANSI_PURPLE.name());
-        Thread red = new Thread(stopWatch::countDown,
+        Thread red = new Thread(stopWatchRed::countDown,
                 ThreadColour.ANSI_RED.name());
         green.start();
         purple.start();
