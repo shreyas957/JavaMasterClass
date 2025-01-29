@@ -1,4 +1,4 @@
-package com.shreyas.concurrency.synchronization.syncronized;
+package com.shreyas.concurrency.synchronization.syncronization;
 
 /**
  * This class will be accessed by multiple threads.

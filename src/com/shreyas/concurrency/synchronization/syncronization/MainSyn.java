@@ -1,4 +1,4 @@
-package com.shreyas.concurrency.synchronization.syncronized;
+package com.shreyas.concurrency.synchronization.syncronization;
 
 public class MainSyn {
     public static void main(String[] args) {

@@ -5,11 +5,19 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
+/**
+ * A repository for storing and retrieving messages with thread-safe operations.
+ */
 class MessageRepository {
     private String message;
     private boolean hasMessage = false;
-    private final Lock lock = new ReentrantLock(); // It has same behavior as intrinsic lock and it is mutually exclusive.
+    private final Lock lock = new ReentrantLock(); // It has the same behavior as an intrinsic lock and it is mutually exclusive.
 
+    /**
+     * Reads the message from the repository.
+     *
+     * @return the message if available, otherwise blocks until a message is available.
+     */
     public String read() {
         // Below code is nothing bus just using synchronized keyword --> deadlock can occur
 //        lock.lock();
@@ -25,7 +33,6 @@ class MessageRepository {
 //        } finally {
 //            lock.unlock();
 //        }
-
         if (lock.tryLock()) {
             try {
                 while (!hasMessage) {
@@ -47,8 +54,12 @@ class MessageRepository {
         return message;
     }
 
+    /**
+     * Writes a message to the repository.
+     *
+     * @param message the message to write.
+     */
     public synchronized void write(String message) {
-
         try {
             if (lock.tryLock(3, TimeUnit.SECONDS)) {
                 try {
@@ -74,6 +85,9 @@ class MessageRepository {
     }
 }
 
+/**
+ * A runnable that writes messages to a MessageRepository.
+ */
 class MessageWriter implements Runnable {
     private MessageRepository outgoingMessage;
     private final String text = """
@@ -81,6 +95,11 @@ class MessageWriter implements Runnable {
             I am a software engineer.
             I am learning Java Concurrency.""";
 
+    /**
+     * Constructs a MessageWriter with the specified MessageRepository.
+     *
+     * @param outgoingMessage the MessageRepository to write messages to.
+     */
     public MessageWriter(MessageRepository outgoingMessage) {
         this.outgoingMessage = outgoingMessage;
     }
@@ -101,9 +120,17 @@ class MessageWriter implements Runnable {
     }
 }
 
+/**
+ * A runnable that reads messages from a MessageRepository.
+ */
 class MessageReader implements Runnable {
     private MessageRepository incomingMessage;
 
+    /**
+     * Constructs a MessageReader with the specified MessageRepository.
+     *
+     * @param incomingMessage the MessageRepository to read messages from.
+     */
     public MessageReader(MessageRepository incomingMessage) {
         this.incomingMessage = incomingMessage;
     }
@@ -124,6 +151,9 @@ class MessageReader implements Runnable {
     }
 }
 
+/**
+ * Demonstrates the use of locks for thread-safe message reading and writing.
+ */
 public class LocksExample {
     public static void main(String[] args) {
         // shared object
