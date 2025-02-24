@@ -14,9 +14,9 @@ public class IteratorMethods {
         var iterator = names.iterator();
         while (iterator.hasNext()){
             System.out.print(iterator.next() + " ");
-//            if(iterator.next().equals("Sumit")){
-//                iterator.remove();
-//            }
+            if(iterator.next().equals("Sumit")){        // As we are using next it will skip every 2nd element.
+                iterator.remove();
+            }
         }
         System.out.println();
 

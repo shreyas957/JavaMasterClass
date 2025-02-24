@@ -1,5 +1,7 @@
 package com.shreyas.collectionsInJava.workingWithStack;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.Stack;
 
 public class StackClass {
@@ -15,5 +17,7 @@ public class StackClass {
         System.out.println(stack.pop());
         System.out.println(stack.size());
         System.out.println(stack.empty());
+
+        Deque<Integer> stack2 = new ArrayDeque<>();   // stack implementation using ArrayDeque
     }
 }
